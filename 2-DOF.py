@@ -10,6 +10,7 @@ timer = pygame.time.Clock()
 pi = 3.141592
 g = 9.81
 rho = 1.225
+
 kg = True
 
 w, h = 3000, 5000
