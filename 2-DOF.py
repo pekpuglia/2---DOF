@@ -40,10 +40,10 @@ class Rocket:
                                                         -self.height/2*math.sin(abs(self.heading)) - self.width/2*math.cos(abs(self.heading))])
         self.burn_rate = m_prop/burn_time
         # colocar op ternario: if self.lit and self.m_prop > 0
-        self.mthrust = isp * g * (self.burn_rate)
+        self.lit = True
+        self.mthrust = isp * g * (self.burn_rate) if self.lit else 0
 
         self.on_pad = True
-        self.lit = True
         self.thrust = Vetores.cis(
             self.mthrust, self.heading) if self.lit else [0, 0]
 
