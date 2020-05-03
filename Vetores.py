@@ -3,9 +3,14 @@ import math
 
 def soma(*v):
     """Soma vetores."""
-    result = [0, 0]
+    lens = [len(vec) for vec in v]
+    for leng in lens:
+        if leng != max(lens):
+            raise TypeError("Different lengths!")
+    result = [0 for x in range(lens[0])]
     for vec in v:
-        result = [result[0] + vec[0], result[1] + vec[1]]
+        for i, el in enumerate(vec):
+            result[i] += el
     return result
 
 
@@ -39,7 +44,7 @@ def dist(v1, v2):
 
 def multi(k, v):
     """Multiplica um vetor por um escalar."""
-    return [k*v[0], k*v[1]]
+    return [k * el for el in v]
 
 
 def versor(v):
